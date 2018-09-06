@@ -211,7 +211,8 @@ html,body {
 .loginSubContainer {
     height: 350px;
     width: 350px;
-    margin:150px 0px 80px 140px;
+    position: relative;
+    margin:170px 0px 80px 240px;
     border: solid 4px #65C0B9;
     border-radius: 5px;
     text-align: center;
@@ -219,7 +220,6 @@ html,body {
 .inputField {
     border-radius: 25px;
     border: 0px none;
-    background: #65C0B9;
     padding: 20px; 
     width: 200px;
     height: 15px;
@@ -233,9 +233,72 @@ html,body {
 }
 .userName {
     margin-top: 20px;
+    background: #65C0B9;
 }
 .passWord {
     margin-top: 10px;
+    background: #65C0B9;
+}
+.firstName {
+    margin-top: 20px;
+    width: 170px;
+    background: #F7D915;
+}
+.lastName {
+    width: 170px;
+    margin-top: 10px;
+    background: #F7D915;
+}
+.emailAddress {
+    width: 300px;
+    margin-top: 10px;
+    background: #F7D915;
+}
+.usrpass {
+    width: 280px;
+    margin-top: 10px;
+    background: #F7D915;
+}
+.confirmusrpass {
+    width: 280px;
+    margin-top: 10px;
+    background: #F7D915;
+}
+.loginBtn{
+    color:#65C0B9 !important;
+    border: solid 2px #65C0B9 !important;
+    background-color: transparent;
+    position: absolute;
+    border-radius: 20px;
+    height: 25px;
+    width: 80px;
+    right: 15px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 23px;
+    bottom: 20px;
+}
+.signupBtn {
+    color:#F7D915 !important;
+    border: solid 2px #F7D915 !important;
+    background-color: transparent;
+    position: absolute;
+    border-radius: 20px;
+    height: 25px;
+    width: 80px;
+    right: 15px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 23px;
+    bottom: 20px;
+}
+.signupBtn:hover {
+    background-color:#F7D915;
+    color: #fff !important;
+}
+.loginBtn:hover {
+    background-color:#65C0B9;
+    color: #fff !important;
 }
 .loginHead {
     margin-top:40px !important;
@@ -243,4 +306,27 @@ html,body {
     margin:auto 50px;
     font-size: 40px;
     color:#ffffff;
+}
+.signUpHead {
+    font-weight: 400;
+    font-size: 60px;
+    color:#ffffff;
+    margin:0px 0px 10px 0px;
+    text-align: left;
+    font-weight: 800;
+}
+.signupuserContainer {
+    height: 600px;
+    width: 550px;
+    margin:30px 0px 0px 80px;
+    text-align: center;
+}
+.signupsubcontainer {
+    height: 450px;
+    width: 500px;
+    background:  #492b7b;
+    border-radius: 5px;
+    text-align: left;
+    padding:20px;
+    position: relative;
 }
