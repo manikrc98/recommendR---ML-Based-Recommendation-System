@@ -1,16 +1,15 @@
+<!DOCTYPE HTML>
 <html>
-
 <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-
     <title>Recommendr</title>
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,700i,900,900i" rel="stylesheet">
 
-    <script type="text/javascript" src="script.js"></script>
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <!-- <script type="module">
+        </script> -->
 </head>
 
 <body>
@@ -27,7 +26,7 @@
                     <a href="#" class="login">Log In</a>
                     <a class="loginSeparator">|</a>
                     <a href="#" class="signup">Sign Up</a>
-                    <button class="getStarted mdc-button mdc-button--raised">Get Started</button>
+                    <button class="getStarted mdc-button mdc-button--raised" id="getStarted">Get Started</button>
                 </li>
             </ul>
         </div>
@@ -123,17 +122,11 @@
 
     <div class="signupContainer">
         <div class="loginSubContainer">
-            <div class="mdc-text-field">
-                <input type="text" id="my-text-field" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="my-text-field">Hint text</label>
-                <div class="mdc-line-ripple"></div>
-            </div>
+                <p class="loginHead">Login</p>
+                <input type="text" name="userName" class="inputField userName" placeholder="Username">
+                <input type="text" name="passWord" class="inputField passWord" placeholder="Password">  
         </div>
     </div>
-
-    <script>
-        mdc.autoInit()
-      </script>
 </body>
 
 </html>
