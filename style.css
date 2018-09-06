@@ -222,13 +222,14 @@ html,body {
     border: 0px none;
     padding: 20px; 
     width: 200px;
+    font-weight: 600;
     height: 15px;
     font-size: 20px;    
     outline: none;
     color:#fff;
 }
 .inputField::placeholder {
-    color:white;
+    color:#fff;
     opacity: 0.5;
 }
 .userName {
