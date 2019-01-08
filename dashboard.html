@@ -2,10 +2,13 @@
 
 <head>
     <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <title>Dashboard</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,700i,900,900i" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
+    <script src="dashboard.js"></script>
 </head>
 
 <body>
@@ -15,17 +18,17 @@
         <h1 class="category-title"><span style="color:#F7D919;">movie</span>recommendR</h1>
         <input type="text" name="search" class="search_bar" placeholder="search">
         <table class="movieStats">
-            <tr>
-                <td>
+            <tr> 
+                <td class="metrics">
                     <h1 class="moviesWatched count">71</h1>
                 </td>
-                <td>
+                <td class="metrics">
                     <h1 class="moviesWatched count">88</h1>
                 </td>
-                <td>
+                <td class="metrics">
                     <h1 class="moviesWatched count">66</h1>
                 </td>
-                <td>
+                <td class="metrics">
                     <h1 class="moviesWatched count">7</h1>
                 </td>
             </tr>
@@ -51,42 +54,233 @@
 
 
     <!-- Movie List -->
-    <div class="movieContainer">
+    <div class="movieContainer" id="movCont">
 
         <!-- movie 1 -->
-        <img src="assets/images/interstellar-poster" class="movie-poster" alt="interstellar-poster">
+        <!-- Create a dynamic id for movieRating which is the combination of movieName + '_rating', e.g = for interstellar -> 'interstellar_rating' -->
+        <div class="poster-container" >
+          
+            <!-- Important NOTES -->
+            <!-- 1. Send the movierating Id as paramaeters to js function changeString -->
+            <!-- 2. The changeString function accepts the string to be applied, and the id of the div(where to be applied) as a parameter -->
+            <!-- 3. The changeBack function accepts same parameters and works on mouseOut pass the rating variable back to the funcition in order to apply it if the mouse hovers out -->
+            <img src="assets/images/interstellar-poster" class="movie-poster" alt="interstellar-poster" onmouseenter="setRatingInside('Interstellar_Rating','8.0')" onmouseout="dropText()">
+            <p>Interstellar</p>
+            <!-- Apply the same id to the rating's div. Note:All of them should be dynamic for all movies -->
+            <div class="rating" id="Interstellar_Rating" onmouseover="setRatingInside('Interstellar_Rating','8.0')" onmouseenter="swapicon()" onmouseout="dropText()">
+                <p>8.0</p>
+            </div>
+        </div>
+
+        <!-- movie 2 -->
+        <div class="poster-container">
+            <img src="assets/images/conjuring-poster.jpg" class="movie-poster" alt="conjuring-poster" onmouseenter="setRatingInside('Conjuring_Rating','6.0')" onmouseout="dropText()">
+            <p>Conjuring</p>
+            <div class="rating" id="Conjuring_Rating" onmouseover="setRatingInside('Conjuring_Rating','6.0')" onmouseenter="swapicon()" onmouseout="dropText()">
+                <p>6.0</p>
+            </div>
+        </div>
+
+        <!-- movie 3 -->
+        <div class="poster-container">
+            <img src="assets/images/Dunkirk-poster.jpg" class="movie-poster" alt="interstellar-poster">
+            <p>Dunkirk</p>
+            <div class="rating">
+                <p>3.3</p>
+            </div>
+        </div>
 
         <!-- movie 1 -->
-        <img src="assets/images/conjuring-poster.jpg" class="movie-poster" alt="conjuring-poster">
-        <!-- movie 1 -->
-        <img src="assets/images/Dunkirk-poster.jpg" class="movie-poster" alt="interstellar-poster">
+        <div class="poster-container">
+            <img src="assets/images/inception-poster.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Inception</p>
+            <div class="rating">
+                <p>10.0</p>
+            </div>
+        </div>
 
         <!-- movie 1 -->
-        <img src="assets/images/inception-poster.jpg" class="movie-poster" alt="conjuring-poster">
-        
-        <!-- movie 1 -->
-        <img src="assets/images/shutter-island.jpg" class="movie-poster" alt="interstellar-poster">
+        <div class="poster-container">
+            <img src="assets/images/shutter-island.jpg" class="movie-poster" alt="interstellar-poster">
+            <p>Shutter Island</p>
+            <div class="rating">
+                <p>8.9</p>
+            </div>
+        </div>
 
         <!-- movie 1 -->
-        <img src="assets/images/hereditary.jpg" class="movie-poster" alt="conjuring-poster">
+        <div class="poster-container">
+            <img src="assets/images/hereditary.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Hereditary</p>
+            <div class="rating">
+                <p>5.0</p>
+            </div>
+        </div>
 
         <!-- movie 1 -->
-        <img src="assets/images/avengers.jpg" class="movie-poster" alt="interstellar-poster">
+        <div class="poster-container">
+            <img src="assets/images/avengers.jpg" class="movie-poster" alt="interstellar-poster">
+            <p>Avengers</p>
+            <div class="rating">
+                <p>7.7</p>
+            </div>
+        </div>
 
         <!-- movie 1 -->
-        <img src="assets/images/karwaan.jpg" class="movie-poster" alt="conjuring-poster">
+        <div class="poster-container">
+            <img src="assets/images/karwaan.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Karwaan</p>
+            <div class="rating">
+                <p>8.0</p>
+            </div>
+        </div>
 
         <!-- movie 1 -->
-        <img src="assets/images/fanney-khan.jpg" class="movie-poster" alt="conjuring-poster">
+        <div class="poster-container">
+            <img src="assets/images/fanney-khan.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Fanney Khan</p>
+            <div class="rating">
+                <p>2.0</p>
+            </div>
+        </div>
 
         <!-- movie 1 -->
-        <img src="assets/images/stree.jpg" class="movie-poster" alt="conjuring-poster">
+        <div class="poster-container">
+            <img src="assets/images/stree.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Stree</p>
+            <div class="rating">
+                <p>7.5</p>
+            </div>
+        </div>
 
         <!-- movie 1 -->
-        <img src="assets/images/znmd.jpg" class="movie-poster" alt="conjuring-poster">
+        <div class="poster-container">
+            <img src="assets/images/znmd.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>ZNMD</p>
+            <div class="rating">
+                <p>9.0</p>
+            </div>
+        </div>
 
         <!-- movie 1 -->
-        <img src="assets/images/hp.jpg" class="movie-poster" alt="conjuring-poster">
+        <div class="poster-container">
+            <img src="assets/images/hp.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Harry Potter</p>
+            <div class="rating">
+                <p>8.2</p>
+            </div>
+        </div>
+
+        <!-- movie 1 -->
+        <div class="poster-container">
+            <img src="assets/images/interstellar-poster" class="movie-poster" alt="interstellar-poster">
+            <p>Interstellar</p>
+            <div class="rating">
+                <p>8.0</p>
+            </div>
+        </div>
+
+        <!-- movie 2 -->
+        <div class="poster-container">
+            <img src="assets/images/conjuring-poster.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Conjuring</p>
+            <div class="rating">
+                <p>6.0</p>
+            </div>
+        </div>
+
+        <!-- movie 3 -->
+        <div class="poster-container">
+            <img src="assets/images/Dunkirk-poster.jpg" class="movie-poster" alt="interstellar-poster">
+            <p>Dunkirk</p>
+            <div class="rating">
+                <p>3.3</p>
+            </div>
+        </div>
+
+        <!-- movie 1 -->
+        <div class="poster-container">
+            <img src="assets/images/inception-poster.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Inception</p>
+            <div class="rating">
+                <p>10.0</p>
+            </div>
+        </div>
+
+        <!-- movie 1 -->
+        <div class="poster-container">
+            <img src="assets/images/shutter-island.jpg" class="movie-poster" alt="interstellar-poster">
+            <p>Shutter Island</p>
+            <div class="rating">
+                <p>8.9</p>
+            </div>
+        </div>
+
+        <!-- movie 1 -->
+        <div class="poster-container">
+            <img src="assets/images/hereditary.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Hereditary</p>
+            <div class="rating">
+                <p>5.0</p>
+            </div>
+        </div>
+
+        <!-- movie 1 -->
+        <div class="poster-container">
+            <img src="assets/images/avengers.jpg" class="movie-poster" alt="interstellar-poster">
+            <p>Avengers</p>
+            <div class="rating">
+                <p>7.7</p>
+            </div>
+        </div>
+
+        <!-- movie 1 -->
+        <div class="poster-container">
+            <img src="assets/images/karwaan.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Karwaan</p>
+            <div class="rating">
+                <p>8.0</p>
+            </div>
+        </div>
+
+        <!-- movie 1 -->
+        <div class="poster-container">
+            <img src="assets/images/fanney-khan.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Fanney Khan</p>
+            <div class="rating">
+                <p>2.0</p>
+            </div>
+        </div>
+
+        <!-- movie 1 -->
+        <div class="poster-container">
+            <img src="assets/images/stree.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Stree</p>
+            <div class="rating">
+                <p>7.5</p>
+            </div>
+        </div>
+
+        <!-- movie 1 -->
+        <div class="poster-container">
+            <img src="assets/images/znmd.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>ZNMD</p>
+            <div class="rating">
+                <p>9.0</p>
+            </div>
+        </div>
+
+        <!-- movie 1 -->
+        <div class="poster-container">
+            <img src="assets/images/hp.jpg" class="movie-poster" alt="conjuring-poster">
+            <p>Harry Potter</p>
+            <div class="rating">
+                <p>8.2</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="movieInfoBoard" id="miBoard">
         
     </div>
 </body>

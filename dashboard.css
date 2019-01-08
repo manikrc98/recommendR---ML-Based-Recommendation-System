@@ -3,21 +3,30 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    /* font-weight: 300; */
+    /* font-family: 'Product Sans'; */
+    transition: 0.4s;
 }
 
 .navbar-dashboard {
     height: 300px;
     width: 100%;
+    top:0;
+    position: fixed; 
     background-color: #311552;
+    overflow: hidden;
+    transition:0.4s;
+    z-index: 100;
 }
 
 .category-title {
     color: #fff;
-    font-size: 26px;
+    font-size: 30px;
     position: relative;
     top: 20px;
     margin-left: 30px;
     display: inline;
+    transition:0.4s;
 }
 
 .search_bar {
@@ -40,12 +49,16 @@ body {
     flex-direction: row;
     flex-wrap: wrap; */
     text-align: center;
-    margin: 100px auto;
+    margin: 80px auto;
+    transition: 0.4s ease;
+    top:-20px;
+    position: relative;
 }
 
-.movieStats tr td {
+.metrics {
     padding: 0px 120px;
     font-size: 35px;
+    transition: 0.4s;
 }
 
 .statDescription td {
@@ -62,12 +75,30 @@ body {
 
 .moviesWatched {
     color: #F7D919;
+    font-size: 2em;
+    transition: 0.3s;
 }
 
 .browse {
     text-align: center;
     font-size: 30px;
     color: #311552;
+    margin-top:330px;
+    font-weight: 300;
+    transition:0.4s;
+}
+.poster-container {
+    text-align: justify;
+    position: relative;
+    margin:10px 20px;
+    transition: 0.4s;
+}
+.poster-container img{
+    display: block;
+    margin: 0 auto;
+} 
+.poster-container p{
+    margin-left:6px;
     font-weight: 300;
 }
 .movieContainer {
@@ -77,10 +108,57 @@ body {
     justify-content: center;
 }
 .movie-poster {
-    margin:20px 20px;
     height: 250px;
     width: 175px;
+    border-radius: 4%;
 }
 .movie-poster:hover {
     cursor: pointer;
+}
+.rating {
+    top:10px;
+    right:0px;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    margin:0px;
+    height: 20px;
+    width: 20px;
+    padding: 0px 10px;
+    color: #F7D919;
+    transition: all 0.3s;
+    text-align: left;
+    border-radius: 1em 0em 0em 1em;
+}
+.rating p{
+    margin: 0px 0px;
+    font-weight: 600;
+}
+.rating a{
+    text-decoration: none;
+    color:#F7D919;
+    margin:0;
+    font-weight: 600;
+}
+.rating i {
+    font-size: 16px;
+    position: absolute;
+    top:2px;
+    margin-left: 3px;
+    margin-right: 0px;
+    padding: 0px;
+    z-index: 100;
+    /* display: none; */
+}
+.movieInfoBoard{
+    height: 530px;
+    width: 30%;
+    background: #202020;
+    position: fixed;
+    margin-right: 20px;
+    margin-top:35px;
+    top:60px;
+    right: 0;
+    display: none;
+    /* opacity: 0.7; */
+    border-radius: 2%;
 }
